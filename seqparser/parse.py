@@ -96,10 +96,10 @@ class Parser:
             # and implement an exception for the error you will find in
             # the error message you receive. 
             while True:
-                try:
+                try: #attempt to apply get_record method and if unsuccessful, break out of loop
                     rec = self.get_record(f_obj)
                     yield rec
-                except:
+                except: 
                     break
 
     def _get_record(self, f_obj: io.TextIOWrapper) -> Union[Tuple[str, str], Tuple[str, str, str]]:
@@ -117,7 +117,7 @@ class FastaParser(Parser):
     Fasta Specific Parsing
     """
     def _get_record(self, f_obj: io.TextIOWrapper) -> Tuple[str, str]:
-        out1 = next(f_obj).replace("\n","")
+        out1 = next(f_obj).replace("\n","") #iterate through lines in f_obj, extract headers and sequences, and remove \n character
         out2 = next(f_obj).replace("\n","")
         return (out1,out2)
     
@@ -127,7 +127,7 @@ class FastqParser(Parser):
     Fastq Specific Parsing
     """
     def _get_record(self, f_obj: io.TextIOWrapper) -> Tuple[str, str, str]:
-        out1 = next(f_obj).replace("\n","")
+        out1 = next(f_obj).replace("\n","") #iterate through lines in f_obj, extract headers, qualities, and sequences, and remove \n character
         out2 = next(f_obj).replace("\n","")
         next(f_obj)
         out3 = next(f_obj).replace("\n","")
