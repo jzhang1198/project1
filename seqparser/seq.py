@@ -3,19 +3,23 @@
 
 def transcribe(seq: str) -> str:
     rna = ''
+    bp = {'A' : 'U',
+          'T' : 'A',
+          'C' : 'G',
+          'G' : 'C'}
+    
     for base in seq:
-        if base == 'T':
-            rna += 'U'
-        else:
-            rna += base
+        rna += bp[base]
     return rna
 
 
 def reverse_transcribe(seq: str) -> str:
     dna = ''
+    bp = {'U' : 'A',
+          'A' : 'T',
+          'C' : 'G',
+          'G' : 'C'}
     for base in seq:
-        if base == 'U':
-            dna += 'T'
-        else:
-            dna += base
+        dna += bp[base]
     return dna
+
