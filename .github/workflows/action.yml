@@ -4,6 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: cd ..
       - run: pwd
       - run: pip install . 
       - run: pytest -v
