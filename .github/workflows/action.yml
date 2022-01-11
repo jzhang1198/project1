@@ -7,5 +7,6 @@ jobs:
       - uses: actions/checkout@main
       - run: pwd
       - run: ls -a
-      - run: pip install . 
+      - run: pip install .
+      - run: pip list 
       - run: pytest -v
