@@ -39,9 +39,9 @@ def test_FastaParser():
     
     fasta = '../project1/data/test.fa'
     out = FastaParser(fasta)
-    out_list = [tup for tup in out]
+    out_list = [tup for tup in out] #convert output into a list of tuples
     
-    assert out_list[0] == (head0,seq0)
+    assert out_list[0] == (head0,seq0) #check that the headers and sequences are equivalent
     assert out_list[1] == (head1,seq1)
     assert out_list[98] == (head98,seq98)
     assert out_list[99] == (head99,seq99)
@@ -55,7 +55,7 @@ def test_FastqParser():
     reads in the example Fastq File.
     """
     
-    head0 = '@seq0'
+    head0 = '@seq0' #define headers and sequences for the first and last two sequences in test.fq
     seq0 = 'TGTGGTCGTATAGTTATTGTCATAAATTACACAGAATCGCGATTCTCCGCGTCCACCAATCTTAGTGCACCACAGCATCGACCCGATTTATGACGCTGAG'
     qual0 = '''*540($=*,=.062565,2>'487')!:&&6=,6,*7>:&132&83*8(58&59>'8!;28<94,0*;*.94**:9+7"94(>7='(!5"2/!%"4#32='''
     head1 = '@seq1'
@@ -70,9 +70,9 @@ def test_FastqParser():
     
     fastq = '../project1/data/test.fq'
     out = FastqParser(fastq)
-    out_list = [tup for tup in out]
+    out_list = [tup for tup in out] #convert output into a list of tuples
 
-    assert out_list[0] == (head0,seq0,qual0)
+    assert out_list[0] == (head0,seq0,qual0) #check that the headers, sequences, and qualities are equivalent
     assert out_list[1] == (head1,seq1,qual1)
     assert out_list[98] == (head98,seq98,qual98)
     assert out_list[99] == (head99,seq99,qual99)

@@ -22,16 +22,20 @@ def test_freebie_transcribe_2():
 
         
 def test_transcribe():
-    """
-    Write your unit test for the
-    transcribe function here.
-    """
-    pass
+    testcase1 = 'ACTGAACCC' #some testcases
+    testcase2 = 'ATGCATGCA' 
+    out1 = 'UGACUUGGG' #the expected output of said testcases
+    out2 = 'UACGUACGU'
+    
+    assert transcribe(testcase1) == out1
+    assert transcribe(testcase2) == out2
 
 
 def test_reverse_transcribe():
-    """
-    Write your unit test for the
-    reverse transcribe function here.
-    """
-    pass
+    testcase1 = 'ACTGAACCC' #some testcases
+    testcase2 = 'ATGCATGCA' 
+    out1 = 'GGGUUCAGU' #the expected output of said testcases
+    out2 = 'UGCAUGCAU'
+    
+    assert reverse_transcribe(testcase1) == out1
+    assert reverse_transcribe(testcase2) == out2
