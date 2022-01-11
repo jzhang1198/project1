@@ -1,12 +1,17 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
+requires = ["flit_core >=3.2,<4", "python_version >= 3.8.8"] 
 build-backend = "flit_core.buildapi"
 
 [project]
 name = "seqparser"
 authors = [{name = "Jonathan Zhang", email = "jon.zhang@ucsf.edu"}]
 readme = "README.md"
+licence = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
+dependencies = [ 
+#no external packages required
+]
 
 [project.urls]
 Home = "https://github.com/jzhang1198/project1"
